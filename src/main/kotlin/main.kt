@@ -1,6 +1,10 @@
 fun main() {
-    val likes = 127
-    val strEnd = if (likes.toString().endsWith("1")) "человеку" else "людям"
+    val likes = 21
+    val strEnd = when {
+       likes % 100 == 11 -> "людям"
+       likes.toString().endsWith("1") -> "человеку"
+       else -> "людям"
+    }
 
     println("Понравилось $likes $strEnd")
 }
